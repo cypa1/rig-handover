@@ -30,5 +30,12 @@ export function createApp(config: RigConfig = loadConfig()) {
     );
   });
 
+  // The agent-readable copy of the page. Same rows, same order (ADR 0001).
+  app.get('/api/digest/:night', (c) => {
+    const night = readNight(config.runsDir, c.req.param('night'));
+    if (!night.exists) return c.json({ error: 'unknown night' }, 404);
+    return c.json({ night: night.night, badLines: night.badLines, counts: night.counts, rows: night.rows });
+  });
+
   return app;
 }
