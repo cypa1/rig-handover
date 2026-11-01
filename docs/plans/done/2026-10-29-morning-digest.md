@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-01
 ---
 
 # Morning digest
@@ -77,3 +78,18 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Digest types: DigestRow and readNight signature | — | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 2 | Digest reader: parse the night's run log | #1 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 3 | Digest page: GET /digest/:night | #1, #2 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 4 | Digest JSON: GET /api/digest/:night | #1, #2 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 5 | Board link to each night's digest | #1, #2, #3 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 6 | Digest route tests | #3, #4 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 7 | Preview for review | #3 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+| 8 | Clean up: remove the lane marker from the preview | #7 | pi · deepseek/deepseek-v4.1-flash · high | 2026-11-01 |
+
+The preview is at https://rig-preview-6hh.pages.dev/ with the lane marker removed. See ADR 0003.
